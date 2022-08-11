@@ -1,0 +1,148 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  background: url(back.jpg) no-repeat center fixed;
+  background-size: cover;
+  color: white;
+  font-family: sans-serif;
+  align-items:center;
+  justify-content: center;
+  font-size: 18px;
+  width: 80%;
+  margin: auto;
+}
+
+button {
+display: block;
+font: inherit;
+}
+
+button {
+margin-top: 1rem;
+font-weight: bold;
+}
+
+
+textarea {
+width: 100%;
+margin-top: 0.5rem;
+border: 0;
+padding: 0.5rem;
+}
+
+
+textarea:focus {
+outline: 2px solid yellow;
+}
+
+textarea {
+resize: vertical;
+}
+
+button {
+border: 0;
+padding: 0.75rem 1rem;
+background-color: yellow;
+}
+
+a {
+color: yellow;
+}
+
+/* nav > a + a {
+margin-left: 1rem;
+} */
+
+ul {
+list-style: none;
+padding: 0;
+}
+
+.items{
+  margin:15px auto;
+  text-align:center;
+  padding:25px 35px;
+  color:white;
+  transition: 0.25px;
+  cursor: pointer;
+}
+.form{
+  border:0;
+  background:none;
+  margin:20px auto;
+  align-items:flex-start;
+  justify-content:center;
+  border: 3px solid #ffc400eC;
+  padding:14px 35px;
+  outline:none;
+  color:white;
+  border-radius: 24px;
+  transition: 0.25px;
+  cursor: pointer;
+}
+.cart{
+padding-right: 2em;
+position: relative;
+
+}
+
+.cart .number-of-items{
+display: flex;
+cursor:pointer;
+justify-content: center;
+align-items: center;
+color: white;
+position: absolute;
+left: 18px;
+top: -7px;
+background: #f09d51;
+height: 20px;
+width: 20px;
+border-radius: 7px;
+}
+.number-of-items .noi{
+font-size: 0.7em;
+}
+.fa-shopping-cart{
+font-size: 1.5em;
+cursor: pointer;
+}
+.navbar {
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+margin: 0 260px;
+}
+
+.navbar a {
+border:0;
+background:none;
+display: block;
+margin:5px;
+border: 3px solid #0c800eec;
+padding:14px 35px;
+outline:none;
+color:white;
+border-radius: 10px;
+transition: 0.25px;
+cursor: pointer;
+text-decoration: none;
+}
+
+.navbar a:hover {
+background:#0c800eec;
+}
+
+.navbar a:active {
+background-color: gold;
+border: gold;
+}
+header{
+  position: -webkit-sticky;
+  position: sticky;
+  margin: 0 auto;
+}

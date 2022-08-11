@@ -1,0 +1,30 @@
+{
+  "name": "elcrtoshop",
+  "version": "1.0.0",
+  "description": "This is a repo for learning project",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Randmass/elcrtoShop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Randmass/elcrtoShop/issues"
+  },
+  "homepage": "https://github.com/Randmass/elcrtoShop#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "path": "^0.12.7",
+    "pg": "^8.7.3"
+  }
+}

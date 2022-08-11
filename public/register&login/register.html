@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronics Shop</title>
+    <link rel="stylesheet" href="register&login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+        <a href="/index.html">Home</a>
+        <a href="/products">Products</a>
+        <a href="/register&login/register.html">Register</a>
+        <a href="/register&login/login.html">Login</a>
+        <a href="/logOut">Logout</a>
+        <a href="/shoppingCart"><div class="cart"><i class="fa fa-shopping-cart fa-1x"></i><div class="number-of-items"><span class="noi">0</span></div></div></a>
+      </div>
+      </header>
+    <div class="container">
+    <!-- sign up start -->
+    <form class="form" action="/register" method="POST" id="createAccount">
+
+        <h2 class="title">
+            Create Account
+        </h2>
+        <div class="form-message"></div>
+        <input type="text" class="username" name="username" autofocus placeholder="Username" id="username">
+        <input type="text" class="email" name="email" autofocus placeholder="Email Address" id="email">
+        <input type="password" class="password" name="password" autofocus placeholder="Password" id="password">
+        <input type="password" class="password" name="confirm_password" autofocus placeholder="Confirm password" id="confirm_password">
+        <input type="submit" value="Register">
+        <p class="form-text">
+            <a class="login-link" id="login-link" href="/register&login/login.html">Already have an account? Sign in
+            </a>
+        </p>
+            </form>
+        <!-- sign up end -->
+</div>
+    <script src="login.js"></script>
+    <script src="register.js"></script>
+</body>
+</html>
