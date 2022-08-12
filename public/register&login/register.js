@@ -29,13 +29,16 @@ createAccountForm.addEventListener("submit", e => {
         return response
     } )
     .then((data) => {
-    console.log('Success:', data);
-    document.location.href="/"
-    alert("You are logged in")
+        console.log(data)
+        console.log('Success:', data);
+        // document.location.href="/"
+        setFormMessage(createAccountForm, "success", data);
+        // alert("You are logged in")
     })
     .catch((error) => {
-    setFormMessage(createAccountForm, "error", "Passwords must match");
-    console.error('Error:', error);
+        console.log(error, 'caught')
+        setFormMessage(createAccountForm, "error", error);
+        console.error('Error:', error);
     });
     
 })

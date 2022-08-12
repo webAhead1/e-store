@@ -69,6 +69,9 @@ header{
   position: -webkit-sticky;
   position: sticky;
   margin: 0 auto;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
 }
 .cart{
   padding-right: 2em;
@@ -101,7 +104,6 @@ header{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  position: fixed;
   top: 0;
   /* this margin allowed for the homepage, products, and cart to be at the same position */
   margin: 0 450px;
@@ -128,4 +130,25 @@ header{
 .navbar a:active {
   background-color: gold;
   border: gold;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }

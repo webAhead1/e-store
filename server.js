@@ -70,19 +70,26 @@ server.post("/register",express.json(), (req, res) => {
     // res.status(411).send({"msg":"All input is required"});
     // throw "All input is required";
     console.log("All input is required");
+    const e = new Error("All input required");
+    throw e;
   }
    // check if already exists
    db.query(`SELECT * FROM users WHERE email='${email}'`).then((result) => {
+    try {
     const users = result.rows;
     // if already exists: send back error message
     if(users.length>0){
       // throw "user already exists";
       console.log("user already exists");
+      res.status(400).send("user already exists");
+      return
     }
     // if passwords don't match send error
     else if(password !== confirm_password){
       // throw "passwords must match";
       console.log("passwords must match");
+      res.status(400).send("passwords must match");
+      return
     }
     // create user
     db.query("INSERT INTO users(username, email, password) VALUES($1, $2, $3)", [username, email, password]);
@@ -97,9 +104,16 @@ server.post("/register",express.json(), (req, res) => {
       }
     );
     res.status(201).json({token})
+
+    }catch(e) {
+      console.error(e);
+      res.status(400).send(e);
+  }
    });
     }catch(e) {
-    console.error(e);
+    console.error(`${e.name}: ${e.message}`);
+    console.error(`${e.message}`);
+    res.status(400).send(e);
 }
 });
 

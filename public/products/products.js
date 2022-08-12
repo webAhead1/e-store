@@ -11,15 +11,21 @@ function allItems(items){
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-<dev>
 <header>
   <div class="navbar">
   <a href="/index.html">Home</a>
   <a href="/products">Products</a>
   <a href="/register&login/register.html">Register</a>
   <a href="/register&login/login.html">Login</a>
-  <a href="/logOut">Logout</a>
   <a href="/shoppingCart"><div class="cart"><i class="fa fa-shopping-cart fa-1x"></i><div class="number-of-items"><span class="noi">0</span></div></div></a>
+  <div class="dropdown">
+            <a href="#"> Username
+              <i class="fa fa-caret-down"></i>
+            </a>
+          <div class="dropdown-content">
+            <a href="#">Logout</a>
+          </div>
+          </div>
 </div>
 </header>
 <form action="/Products" method="POST">
