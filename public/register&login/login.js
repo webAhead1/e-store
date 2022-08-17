@@ -6,6 +6,13 @@ function setFormMessage(formElement, type, message) {
     messageElement.classList.add(`${type}-message`);
 }
 
+    let loginButton = document.getElementById("loginButton");
+    let logoutButton = document.getElementById("logoutButton");
+    let loginDisplay = loginButton.style.display;
+    let logoutDisplay = logoutButton.style.display;
+    localStorage.setItem("loginDisplay", "none");
+    localStorage.setItem("logoutDisplay", "block");
+
 const loginForm = document.querySelector("#login");
 
 loginForm.addEventListener("submit", e => {
@@ -26,15 +33,28 @@ loginForm.addEventListener("submit", e => {
     })
     .then((response) =>{
         console.log(response);
-        return response
+        return response.json();
     } )
     .then((data) => {
-    console.log('Success:', data);
-    document.location.href="/"
+    if (!data.token) {
+        console.log("batata")
+        console.log(data.message)
+        setFormMessage(loginForm, "error", data.message);
+        throw new Error(data)
+    }
+    setFormMessage(loginForm, "success", "You are logged in");
+    // let loginButton = document.getElementById("loginButton");
+    // let logoutButton = document.getElementById("logoutButton");
+    // logoutButton.style.display = "block";
+    // loginButton.style.display = "none";
+    
     alert("You are logged in")
+    document.location.href="/"
     })
     .catch((error) => {
-    setFormMessage(loginForm, "error", "Invalid email/password combination")
-    console.error('Error:', error);
+    alert("You are not logged in")
+    console.error(error);
     });
 }) 
+
+

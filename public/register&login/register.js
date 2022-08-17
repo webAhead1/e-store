@@ -10,6 +10,7 @@ const createAccountForm = document.querySelector("#createAccount");
 
 createAccountForm.addEventListener("submit", e => {
     e.preventDefault();
+    // createAccountForm.querySelector(".form-message").textContent.clear();
     const data = new FormData(createAccountForm);
    
     var object = {};
@@ -25,20 +26,35 @@ createAccountForm.addEventListener("submit", e => {
         body: json,
     })
     .then((response) =>{
-        console.log(response);
-        return response
+        // if(response.ok){
+        //     return response
+        // } else {
+        //     throw new Error(response)
+        // }
+        return response.json();
     } )
     .then((data) => {
+        if (!data.token) {
+            console.log(data.message)
+            setFormMessage(createAccountForm, "error", data.message);
+            throw new Error(data)
+        }
         console.log(data)
         console.log('Success:', data);
-        // document.location.href="/"
-        setFormMessage(createAccountForm, "success", data);
-        // alert("You are logged in")
+        // let loginButton = document.getElementById("loginButton");
+        // let logoutButton = document.getElementById("logoutButton");
+        // logoutButton.style.display = "block";
+        // loginButton.style.display = "none";
+        // let loginButton = document.getElementById("loginButton");
+        // let logoutButton = document.getElementById("logoutButton");
+        // localStorage.setItem(loginButton.style.display, "none");
+        // localStorage.setItem(logoutButton.style.display, "block");
+        alert(`You have registered successfully!`)
+        document.location.href="/"
+        // setFormMessage(createAccountForm, "success", "You have registered successfully");
     })
     .catch((error) => {
-        console.log(error, 'caught')
-        setFormMessage(createAccountForm, "error", error);
-        console.error('Error:', error);
+        console.log(error)
+        // setFormMessage(createAccountForm, "error", error);
     });
-    
 })

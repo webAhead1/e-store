@@ -15,18 +15,11 @@ function allItems(items){
   <div class="navbar">
   <a href="/index.html">Home</a>
   <a href="/products">Products</a>
-  <a href="/register&login/register.html">Register</a>
-  <a href="/register&login/login.html">Login</a>
   <a href="/shoppingCart"><div class="cart"><i class="fa fa-shopping-cart fa-1x"></i><div class="number-of-items"><span class="noi">0</span></div></div></a>
-  <div class="dropdown">
-            <a href="#"> Username
-              <i class="fa fa-caret-down"></i>
-            </a>
-          <div class="dropdown-content">
-            <a href="#">Logout</a>
-          </div>
-          </div>
 </div>
+    <a href="/register&login/login.html"><button id="loginButton" class="loginButton">Login</button></a>
+    <button id="logoutButton" class="logoutButton">Logout</button>
+    <a href="/register&login/register.html"><button id="registerButton">Register</button></a>
 </header>
 <form action="/Products" method="POST">
 <ul>
@@ -41,7 +34,7 @@ function allItems(items){
         )
         .join("")}
   </ul>
-</dev>
+  <script src="logout.js"></script>
 </body>
 </html>
 `

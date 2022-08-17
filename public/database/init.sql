@@ -1,6 +1,6 @@
 BEGIN;
 
-DROP TABLE IF EXISTS users, shopping_cart, products CASCADE;
+DROP TABLE IF EXISTS users, products CASCADE;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
@@ -9,13 +9,13 @@ CREATE TABLE users (
   password VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE shopping_cart (
-  id SERIAL PRIMARY KEY,
-  product_name VARCHAR(255) NOT NULL,
-  price INTEGER,
-  amount INTEGER,
-  user_id INTEGER REFERENCES users(id)
-);
+-- CREATE TABLE shopping_cart (
+--   id SERIAL PRIMARY KEY,
+--   product_name VARCHAR(255) NOT NULL,
+--   price INTEGER,
+--   amount INTEGER,
+--   user_id INTEGER REFERENCES users(id)
+-- );
 
 
 CREATE TABLE products(
@@ -29,10 +29,10 @@ INSERT INTO users (username, email, password) VALUES
   ('ramie', 'ramiebash@gmail.com', 123)
 ;
 
-INSERT INTO shopping_cart (product_name, price, amount, user_id) VALUES
-  ('iphone 13 pro', 999, 3, 1),
-  ('intel core i9 pc', 1899, 2, 2)
-;
+-- INSERT INTO shopping_cart (product_name, price, amount, user_id) VALUES
+--   ('iphone 13 pro', 999, 3, 1),
+--   ('intel core i9 pc', 1899, 2, 2)
+-- ;
 
 INSERT INTO products (name, price, quantity) VALUES
   ('iphone13', 3499.99, 20),
