@@ -12,9 +12,9 @@ const server = express();
 const authorization = (req, res, next) => {
   const token = req.cookies.access_token;
   if (!token) {
-    res.status(403).send({message: "You need to log in first"})
+    // res.status(403).send({message: "You need to log in first"})
     // return
-    // res.redirect("/login");
+    res.redirect(path.join( '/register&login', '/login.html'));
     // return res.sendStatus(403);
   }
   try {
@@ -27,7 +27,7 @@ const authorization = (req, res, next) => {
 };
 
 server.get("/login", (req, res) => {
-  res.sendFile(path.join(__dirname, '/public/register&login', 'login.html'));
+  res.sendFile(path.join(__dirname, '/public/register&login', '/login.html'));
   // res.sendFile(path.join(__dirname, '/public/register&login', 'register&login.css'));
 })
 
